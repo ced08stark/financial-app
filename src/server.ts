@@ -53,7 +53,7 @@ app.use("/api/statistics", statistics);
 
 // Example: Default route (just for testing)
 app.get("/", (req: Request, res: Response) => {
-  res.send("Welcome to the Auto ecole API");
+  res.send("Welcome to the Financial app API");
 });
 
 const PORT = process.env.PORT || 5000;
