@@ -3,7 +3,8 @@ const whiteList: string[] = [
     "http://localhost:3001",
     "http://127.0.0.1:5500",
     "http://localhost:5000",
-    "https://auto-ecole-backend.onrender.com"
+    "https://auto-ecole-backend.onrender.com",
+    "https://financial-app-flds.onrender.com"
   ];
   
   /**

@@ -14,6 +14,10 @@ const options: swaggerJsdoc.Options = {
         url: "http://localhost:5000",
         description: "Serveur de développement",
       },
+      {
+        url: "https://financial-app-flds.onrender.com",
+        description: "Serveur de production",
+      }
     ],
     components: {
       securitySchemes: {

@@ -5,7 +5,8 @@ const whiteList = [
     "http://localhost:3001",
     "http://127.0.0.1:5500",
     "http://localhost:5000",
-    "https://auto-ecole-backend.onrender.com"
+    "https://auto-ecole-backend.onrender.com",
+    "https://financial-app-flds.onrender.com"
 ];
 /**
  * Vérifie si une adresse email contient une sous-chaîne spécifique.
