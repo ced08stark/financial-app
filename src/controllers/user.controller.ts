@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import User from '../models/user';
-import { authMiddleware } from '../middlewares/verifyToken';
+
 
 // Get user profile
 export const getUserProfile = async (req: Request, res: Response) : Promise<void> => {

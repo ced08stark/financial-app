@@ -3,7 +3,6 @@ import Post from '../models/post';
 import User from '../models/user';
 import Group from '../models/group';
 import mongoose from 'mongoose';
-import { authMiddleware } from '../middlewares/verifyToken';
 
 
 

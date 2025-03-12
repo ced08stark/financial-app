@@ -1,11 +1,9 @@
 import mongoose, { Document, Schema } from 'mongoose';
 
 interface IUser extends Document {
-  firstName: string;
-  lastName: string;
+  userName?: string;
   email: string;
   password: string;
-  phoneNumber?: string;
   refreshToken?: string;
   role: 'admin' | 'editor' | 'member' | 'premium' | 'guest';
   preferences: {
@@ -20,11 +18,9 @@ interface IUser extends Document {
 
 const userSchema = new Schema<IUser>(
   {
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
+    userName: { type: String, required: false },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    phoneNumber: { type: String },
     role: { type: String, enum: ['admin', 'editor', 'member', 'premium', 'guest'], required: true },
     preferences: {
       language: { type: String, default: "fr" },

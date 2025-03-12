@@ -25,17 +25,13 @@ const router = express.Router();
  *           schema:
  *             type: object
  *             required:
- *               - firstName
- *               - lastName
+ *               - userName
  *               - email
  *               - password
  *             properties:
- *               firstName:
+ *               userName:
  *                 type: string
  *                 example: John
- *               lastName:
- *                 type: string
- *                 example: Doe
  *               email:
  *                 type: string
  *                 format: email
@@ -43,9 +39,6 @@ const router = express.Router();
  *               password:
  *                 type: string
  *                 example: "Password123!"
- *               phoneNumber:
- *                 type: string
- *                 example: "+33612345678"
  *     responses:
  *       201:
  *         description: Utilisateur créé avec succès
@@ -55,11 +48,8 @@ const router = express.Router();
 router.post(
   "/register",
   [
-    body("firstName").notEmpty().withMessage("Le prénom est requis"),
-    body("lastName").notEmpty().withMessage("Le nom est requis"),
     body("email").isEmail().withMessage("Email invalide"),
     body("password").isLength({ min: 6 }).withMessage("Le mot de passe doit avoir au moins 6 caractères"),
-    body("phoneNumber").optional().isMobilePhone("fr-FR").withMessage("Numéro de téléphone invalide"),
   ],
   register
 );

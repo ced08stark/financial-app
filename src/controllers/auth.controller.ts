@@ -21,7 +21,7 @@ interface JwtPayload {
 // Register a new user
 export const register = async (req: Request, res: Response) : Promise<void> => {
   try {
-    const { firstName, lastName, email, password, phoneNumber, role } = req.body;
+    const { userName, email, password,  role } = req.body;
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });
@@ -35,11 +35,9 @@ export const register = async (req: Request, res: Response) : Promise<void> => {
 
     // Create a new user
     const user = new User({
-      firstName,
-      lastName,
+      userName,
       email,
       password: hashedPassword,
-      phoneNumber,
       role: role || 'member', // Default role is 'member'
     });
 
